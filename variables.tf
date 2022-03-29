@@ -4,7 +4,7 @@ variable "region" {
   default     = "sgp1"
   validation {
     condition     = length(regexall("^ams3|blr1|fra1|lon1|nyc1|nyc3|sfo3|sgp1|tor1$", var.region)) > 0
-    error_message = "Invalid region. Valid regions are: ams3, blr1, fra1, lon1, nyc1, nyc3, sfo3, sgp1, tor1"
+    error_message = "Invalid region. Valid regions are: ams3, blr1, fra1, lon1, nyc1, nyc3, sfo3, sgp1, tor1."
   }
 }
 
