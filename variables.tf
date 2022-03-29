@@ -11,7 +11,7 @@ variable "region" {
 variable "vpc_network_range" {
   type        = string
   description = "Range of IP addresses for the VPC in CIDR notation. Cannot be larger than /16 or smaller than /24. Default is 10.10.10.0/24"
-  default     = "172.11.10.0/24"
+  default     = "172.10.1.0/24"
 }
 
 variable "server_size" {
