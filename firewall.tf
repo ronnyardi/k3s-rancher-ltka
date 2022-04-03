@@ -24,7 +24,7 @@ resource "digitalocean_firewall" "k3s_firewall" {
     port_range       = "22"
     source_addresses = ["0.0.0.0/0", "::/0"]
   }
-  
+
   outbound_rule {
     protocol         = "icmp"
     source_addresses = [var.network_range]
