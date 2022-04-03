@@ -8,20 +8,32 @@ variable "region" {
   }
 }
 
-variable "vpc_network_range" {
+variable "network_range" {
   type        = string
-  description = "Range of IP addresses for the VPC in CIDR notation. Cannot be larger than /16 or smaller than /24. Default is 10.10.10.0/24"
+  description = "IP addresses range for VPC in CIDR notation and must comply with RFC 1918"
   default     = "10.2.15.0/24"
 }
 
 variable "server_size" {
   type        = string
-  description = "Server droplet size. e.g. s-1vcpu-2gb"
+  description = "Server droplet size. More information, send GET to DigitalOcean rest API of https://api.digitalocean.com/v2/sizes"
   default     = "s-1vcpu-2gb"
+}
+
+variable "agent_size" {
+  type        = string
+  description = "Server droplet size. More information, send GET to DigitalOcean rest API of https://api.digitalocean.com/v2/sizes"
+  default     = "s-2vcpu-4gb"
 }
 
 variable "server_count" {
   type        = number
-  description = "Number of server (master) nodes to provision"
+  description = "Number of master nodes to provision"
   default     = 2
+}
+
+variable "agent_count" {
+  type        = number
+  description = "Number of agent nodes to provision"
+  default     = 3
 }
