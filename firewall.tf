@@ -4,7 +4,7 @@ resource "digitalocean_firewall" "k3s_firewall" {
 
   inbound_rule {
     protocol         = "icmp"
-    source_addresses = [var.vpc_network_range]
+    source_addresses = [var.network_range]
   }
 
   inbound_rule {
@@ -16,7 +16,7 @@ resource "digitalocean_firewall" "k3s_firewall" {
   inbound_rule {
     protocol         = "udp"
     port_range       = "1-65535"
-    source_addresses = [var.vpc_network_range]
+    source_addresses = [var.network_range]
   }
 
   inbound_rule {
@@ -27,7 +27,7 @@ resource "digitalocean_firewall" "k3s_firewall" {
   
   outbound_rule {
     protocol         = "icmp"
-    source_addresses = [var.vpc_network_range]
+    source_addresses = [var.network_range]
   }
 
   outbound_rule {
