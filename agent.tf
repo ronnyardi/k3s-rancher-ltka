@@ -8,6 +8,7 @@ resource "digitalocean_droplet" "k3s_agent" {
   size       = var.agent_size
   monitoring = true
   vpc_uuid   = digitalocean_vpc.k3s_vpc.id
+  ssh_keys   = var.ssh_key_fingerprints
 }
 
 resource "digitalocean_project_resources" "k3s_agent_nodes" {

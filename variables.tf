@@ -37,3 +37,9 @@ variable "agent_count" {
   description = "Number of agent nodes to provision"
   default     = 3
 }
+
+variable "ssh_key_fingerprints" {
+  type        = list(string)
+  description = "List of SSH Key fingerprints"
+  default     = ["34:9f:7a:e5:cf:7d:d9:ae:6b:f4:a2:a8:b4:98:88:6d"]
+}
