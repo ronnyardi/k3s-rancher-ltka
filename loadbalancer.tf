@@ -7,9 +7,21 @@ resource "digitalocean_loadbalancer" "k3s_lb" {
     tls_passthrough = true
     entry_port      = 6443
     entry_protocol  = "https"
-
     target_port     = 6443
     target_protocol = "https"
+  }
+  forwarding_rule {
+    tls_passthrough = true
+    entry_port      = 443
+    entry_protocol  = "https"
+    target_port     = 443
+    target_protocol = "https"
+  }
+  forwarding_rule {
+    entry_port      = 80
+    entry_protocol  = "http"
+    target_port     = 80
+    target_protocol = "http"
   }
 
   healthcheck {
