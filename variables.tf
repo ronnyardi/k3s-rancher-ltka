@@ -43,3 +43,9 @@ variable "ssh_key_fingerprints" {
   description = "List of SSH Key fingerprints"
   default     = ["34:9f:7a:e5:cf:7d:d9:ae:6b:f4:a2:a8:b4:98:88:6d"]
 }
+
+variable "domain_name" {
+  type        = string
+  description = "Your registered domain name for accessing trough web browser"
+  default     = "rancher-mylabs.tech"
+}
