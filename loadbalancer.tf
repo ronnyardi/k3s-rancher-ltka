@@ -5,10 +5,10 @@ resource "digitalocean_loadbalancer" "k3s_lb" {
 
   forwarding_rule {
     certificate_name  = digitalocean_certificate.k3s-cert.name
-    entry_port      = 6443
-    entry_protocol  = "https"
-    target_port     = 6443
-    target_protocol = "https"
+    entry_port        = 6443
+    entry_protocol    = "https"
+    target_port       = 6443
+    target_protocol   = "https"
   }
   forwarding_rule {
     certificate_name  = digitalocean_certificate.k3s-cert.name
