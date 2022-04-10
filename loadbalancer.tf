@@ -34,7 +34,7 @@ resource "digitalocean_loadbalancer" "k3s_lb" {
 
     target_port     = 80
     target_protocol = "http"
-  }  
+  }
 
   droplet_tag = local.server_tag
 }
