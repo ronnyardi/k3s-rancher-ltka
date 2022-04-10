@@ -17,10 +17,10 @@ resource "digitalocean_loadbalancer" "k3s_lb" {
     target_protocol  = "https"
   }
   forwarding_rule {
-    entry_port       = 80
-    entry_protocol   = "http"
-    target_port      = 80
-    target_protocol  = "http"
+    entry_port      = 80
+    entry_protocol  = "http"
+    target_port     = 80
+    target_protocol = "http"
   }
   healthcheck {
     port     = 6443
