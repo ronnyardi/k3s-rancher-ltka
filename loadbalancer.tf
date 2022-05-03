@@ -3,7 +3,7 @@ resource "digitalocean_loadbalancer" "k3s_lb" {
   region   = var.region
   vpc_uuid = digitalocean_vpc.k3s_vpc.id
   forwarding_rule {
-    certificate_name = digitalocean_certificate.k3s-cert.name
+    tls_passthrough  = true
     entry_port       = 6443
     entry_protocol   = "https"
     target_port      = 6443
